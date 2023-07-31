@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Async_Inn.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -38,6 +38,8 @@ namespace Async_Inn.Data
 
             base.OnModelCreating(modelBuilder);
         }
+
+        public DbSet<Async_Inn.Models.Hotel> Hotel { get; set; } = default!;
     }
 
 }

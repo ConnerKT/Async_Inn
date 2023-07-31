@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/connerthompson/Projects/Async_Inn/Async_Inn/Async_Inn.csproj": {}
+    "/Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/Async_Inn.csproj": {}
   },
   "projects": {
-    "/Users/connerthompson/Projects/Async_Inn/Async_Inn/Async_Inn.csproj": {
+    "/Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/Async_Inn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/connerthompson/Projects/Async_Inn/Async_Inn/Async_Inn.csproj",
+        "projectUniqueName": "/Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/Async_Inn.csproj",
         "projectName": "Async_Inn",
-        "projectPath": "/Users/connerthompson/Projects/Async_Inn/Async_Inn/Async_Inn.csproj",
+        "projectPath": "/Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/Async_Inn.csproj",
         "packagesPath": "/Users/connerthompson/.nuget/packages/",
-        "outputPath": "/Users/connerthompson/Projects/Async_Inn/Async_Inn/obj/",
+        "outputPath": "/Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/connerthompson/.nuget/NuGet/NuGet.Config"
@@ -47,11 +47,19 @@
               "target": "Package",
               "version": "[7.0.9, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.9, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.8, )"
             }
           },
           "imports": [
