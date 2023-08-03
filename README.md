@@ -1,14 +1,59 @@
 # Async Inn Management System
 
 ## Introduction
+
 Welcome to the Async Inn Management System! This web application is designed to manage hotels, rooms, and amenities for a hotel chain called Async Inn. With this system, you can easily create, read, update, and delete data for hotels, rooms, and amenities through an API.
 
 ## ERD Diagram
+
 Below is the Entity Relationship Diagram (ERD) for the Async Inn Management System:
 
 ![Async Inn ERD](link-to-your-erd-image.png)
 
+## What each table represents
+
+| Column Name | Data Type | Description                       |
+|-------------|----------|-----------------------------------|
+| id          | integer  | Unique identifier for each hotel location entry. |
+| city        | string   | The city where the hotel is located. |
+| state       | string   | The state where the hotel is located. |
+| address     | string   | The address of the hotel.          |
+| phone       | string   | The contact phone number for the hotel. |
+
+## Table Hotel_Rooms
+
+| Column Name | Data Type | Description                       |
+|-------------|----------|-----------------------------------|
+| hotel_id    | integer  | Foreign key referencing the id column of the Hotel_Location table, indicating which hotel the rooms belong to. |
+| rooms_id    | integer  | Foreign key referencing the id column of the Rooms table, indicating which room is available in the hotel. |
+| id          | integer  | Unique identifier for each hotel-room relationship entry. |
+| price       | decimal  | The price of the room in the hotel. |
+
+## Table Rooms
+
+| Column Name | Data Type | Description                       |
+|-------------|----------|-----------------------------------|
+| id          | integer  | Unique identifier for each room entry. |
+| name        | string   | The name or number assigned to the room (e.g., "Suite 101"). |
+| Layout      | string   | The layout or configuration of the room (e.g., "Single", "Double", "Suite", etc.). |
+
+## Table Room_Amen
+| Column Name | Data Type | Description                       |
+|-------------|----------|-----------------------------------|
+| id          | integer  | Unique identifier for each room-amenity relationship entry. |
+| Rooms_id    | integer  | Foreign key referencing the id column of the Rooms table, indicating which room has the specified amenity. |
+| Amen_id     | integer  | Foreign key referencing the id column of the Amen table, indicating which amenity is available in the room. |
+
+## Table Amen
+
+| Column Name | Data Type | Description                       |
+|-------------|----------|-----------------------------------|
+| id          | integer  | Unique identifier for each amenity entry. |
+| nameofamen  | string   | The name or description of the amenity (e.g., "Wi-Fi", "TV", "Mini-Bar", etc.). |
+
+
 ## Overview of Relationships
+
 - A **Hotel** can have multiple **Rooms**, but a **Room** belongs to only one **Hotel**.
 - A **Room** can have multiple **Amenities**, and an **Amenity** can be associated with multiple **Rooms**.
 
