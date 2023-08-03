@@ -1,4 +1,6 @@
 ﻿using Async_Inn.Data;
+using Async_Inn.Models.Interfaces;
+using Async_Inn.Models.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Async_Inn;
@@ -17,6 +19,7 @@ public class Program
         options.UseSqlServer(builder.Configuration
         .GetConnectionString("DefaultConnection")));
 
+        builder.Services.AddTransient<IHotel, HotelService>();
         var app = builder.Build();
 
         //app.MapGet("/", () => "Hello World!");
