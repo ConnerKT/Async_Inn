@@ -8,7 +8,7 @@ Welcome to the Async Inn Management System! This web application is designed to 
 
 Below is the Entity Relationship Diagram (ERD) for the Async Inn Management System:
 
-![Async Inn ERD](link-to-your-erd-image.png)
+![Async Inn ERD]([link-to-your-erd-image.png](https://github.com/ConnerKT/Async_Inn/blob/Lab12-ASYNCINN/assets/Inn.png))
 
 ## What each table represents
 
