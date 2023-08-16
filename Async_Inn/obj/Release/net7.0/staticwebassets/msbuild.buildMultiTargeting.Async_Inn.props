@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Async_Inn.props" />
+</Project>

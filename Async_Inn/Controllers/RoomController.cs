@@ -46,8 +46,9 @@ namespace Async_Inn.Controllers
             {
                 return NotFound();
             }
+            var sending = new Room() { ID = room.ID, Name = null, Layout = room.Layout };
 
-            return room;
+            return sending;
         }
 
         // PUT: api/Room/5
@@ -55,7 +56,7 @@ namespace Async_Inn.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRoom(int id, Room room)
         {
-            if (id != room.Id)
+            if (id != room.ID)
             {
                 return BadRequest();
             }
@@ -93,7 +94,7 @@ namespace Async_Inn.Controllers
             _context.Room.Add(room);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetRoom", new { id = room.Id }, room);
+            return CreatedAtAction("GetRoom", new { id = room.ID }, room);
         }
 
         // DELETE: api/Room/5
@@ -118,7 +119,7 @@ namespace Async_Inn.Controllers
 
         private bool RoomExists(int id)
         {
-            return (_context.Room?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Room?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }

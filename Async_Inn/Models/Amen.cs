@@ -6,7 +6,7 @@ namespace Async_Inn.Models
 	public class Amen
 	{
 		[Key]
-		public int Id { get; set; }
+		public int ID { get; set; }
 		[Required]
 
 		public string NameOfAmen { get; set; }

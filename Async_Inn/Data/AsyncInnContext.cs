@@ -21,20 +21,20 @@ namespace Async_Inn.Data
         {
 			//Information tables
 			modelBuilder.Entity<Room>().HasData(new Room
-			{ Id = 1, Layout = 0, Name = "Basic Room" });
+			{ ID = 1, Layout = 0, Name = "Basic Room" });
 
 			modelBuilder.Entity<Hotel>().HasData(new Hotel
-			{ Id = 1, Address = "123 Sesame St", City = "Memphis", State = "TN",
+			{ ID = 1, Address = "123 Sesame St", City = "Memphis", State = "TN",
 			Name = "Memphis Inn", Phone = "901-222-2222"});
 
 			modelBuilder.Entity<Amen>().HasData(new Amen
-			{ Id = 1, NameOfAmen = "A/C" });
+			{ ID = 1, NameOfAmen = "A/C" });
 
 			// Reference Tables
 			modelBuilder.Entity<RoomAmen>().HasData(new RoomAmen
-			{ Id = 1, AmenId = 1, RoomsId = 1 });
+			{ ID = 1, AmenID = 1, RoomsId = 1 });
 			modelBuilder.Entity<HotelRoom>().HasData(new HotelRoom
-			{ Id = 1, HotelId = 1, RoomId = 1, Price = 120.99 });
+			{ ID = 1, HotelID = 1, RoomID = 1, Price = 120.99 });
 
             base.OnModelCreating(modelBuilder);
         }
