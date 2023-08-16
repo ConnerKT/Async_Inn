@@ -1,5 +1,6 @@
 ﻿<Properties StartupConfiguration="{4AED3CD7-7DE1-4F52-A1BE-5D180D22E17D}|https">
   <MultiItemStartupConfigurations />
+<<<<<<< Updated upstream
   <MonoDevelop.Ide.ItemProperties.Async__Inn PreferredExecutionTarget="/Applications/Firefox.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
@@ -7,13 +8,31 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench>
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Async_Inn/Models/Services/HotelService.cs">
+    <Files>
+      <File FileName="Async_Inn/Controllers/AmenController.cs" Line="1" Column="1" />
+      <File FileName="Async_Inn/Controllers/HotelsController.cs" Line="1" Column="1" />
+      <File FileName="Async_Inn/Models/Services/HotelService.cs" Line="1" Column="1" />
+    </Files>
+>>>>>>> Stashed changes
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Async_Inn" expanded="True">
             <Node name="Async_Inn">
               <Node name="Controllers" expanded="True" />
+<<<<<<< Updated upstream
               <Node name="Program.cs" selected="True" />
+=======
+              <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Services" expanded="True">
+                  <Node name="HotelService.cs" selected="True" />
+                </Node>
+              </Node>
+>>>>>>> Stashed changes
             </Node>
           </Node>
         </State>
@@ -25,4 +44,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Async__Inn PreferredExecutionTarget="/Applications/Firefox.app" />
 </Properties>
