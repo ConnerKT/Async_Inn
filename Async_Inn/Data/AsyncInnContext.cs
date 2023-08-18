@@ -10,7 +10,7 @@ namespace Async_Inn.Data
 		public DbSet<RoomAmen> RoomAmens;
         public DbSet<Room> Rooms;
 		public DbSet<Hotel> Hotelsl;
-		public DbSet<HotelRoom> HotelRooms;
+		public DbSet<HotelRoom> HotelRoom;
 
 		public AsyncInnContext(DbContextOptions<AsyncInnContext> options) : base(options)
 		{

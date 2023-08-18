@@ -16,6 +16,8 @@ namespace Async_Inn.Models
 
         public double Price { get; set; }
 
+        public string Name { get; set; }
+
     }
 }
 

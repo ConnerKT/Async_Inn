@@ -116,6 +116,83 @@ namespace Async_Inn.Controllers
 
             return NoContent();
         }
+        //[Route("{roomId}/Amenity/{amenityId}")]
+        [HttpPost]
+        [Route("{roomId}/Amenity/{amenityId}")]
+        public async Task<IActionResult> AddAmenityToRoom(int roomId, int amenityId)
+        {
+            if (_context.RoomAmens == null)
+            {
+                return Problem("AsyncInnContext is Null");
+            }
+
+            var amen = _context.Amen.FindAsync(amenityId);
+            if (amen == null)
+            {
+                return Problem("That Amentity ID doesn't exist");
+            }
+            var room = _context.Rooms.FindAsync(roomId);
+            if (room == null)
+            {
+                return Problem("That room ID doesn't exist");
+            }
+            RoomAmen newRoomAmen = new RoomAmen();
+            try
+            {
+                newRoomAmen = _context.RoomAmens.Add(new RoomAmen { AmenID = amenityId, RoomsId = roomId }).Entity;
+            }
+            catch (Exception)
+            {
+                throw new Exception("There was an error!");
+            }
+            finally
+            {
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("PostAmenityToRoom", newRoomAmen.ID, newRoomAmen);
+
+        }
+        [HttpDelete]
+        [Route("{roomId}/Amenity/{amenityId}")]
+        public async Task<IActionResult> RemoveAmentityFromRoom(int roomId, int amenityId)
+        {
+            if (_context.RoomAmens == null)
+            {
+                return Problem("AsyncInnContext is Null");
+            }
+
+            var amen = _context.Amen.FindAsync(amenityId);
+            if (amen == null)
+            {
+                return Problem("That Amentity ID doesn't exist");
+            }
+            var room = _context.Rooms.FindAsync(roomId);
+            if (room == null)
+            {
+                return Problem("That room ID doesn't exist");
+            }
+
+                try
+                {
+
+                    RoomAmen amenToRemove= await _context.RoomAmens.FindAsync(new { AmenityID = amenityId, RoomID = roomId });
+
+                    _context.RoomAmens.Remove(amenToRemove);
+                }
+
+                catch (Exception)
+                {
+                throw new Exception("Can not remove");
+                }
+                finally
+                {
+                //Finally saves the changes into the context
+                    await _context.SaveChangesAsync();
+                }
+                return Ok();
+
+            }
 
         private bool RoomExists(int id)
         {

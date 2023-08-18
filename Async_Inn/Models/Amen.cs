@@ -10,6 +10,8 @@ namespace Async_Inn.Models
 		[Required]
 
 		public string NameOfAmen { get; set; }
-	}
+
+        public List<RoomAmen>? RoomAmenities { get; set; }
+    }
 }
 
