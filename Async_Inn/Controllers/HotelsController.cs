@@ -56,7 +56,7 @@ namespace Async_Inn.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutHotel(int id, Hotel hotel)
         {
-            if (id != hotel.Id)
+            if (id != hotel.ID)
             {
                 return BadRequest();
             }
@@ -94,7 +94,7 @@ namespace Async_Inn.Controllers
             _context.Hotel.Add(hotel);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetHotel", new { id = hotel.Id }, hotel);
+            return CreatedAtAction("GetHotel", new { id = hotel.ID }, hotel);
         }
 
         // DELETE: api/Hotels/5
@@ -119,7 +119,7 @@ namespace Async_Inn.Controllers
 
         private bool HotelExists(int id)
         {
-            return (_context.Hotel?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Hotel?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }

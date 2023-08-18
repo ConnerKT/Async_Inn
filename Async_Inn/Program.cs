@@ -1,5 +1,8 @@
-﻿using Async_Inn.Data;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+using Async_Inn.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace Async_Inn;
 
@@ -10,15 +13,39 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddControllersWithViews();
+        builder.Services.AddControllersWithViews()
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+                options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+            });
+        builder.Services.AddSwaggerGen(options =>
+        {
+            // Make sure get the "using Statement"
+            options.SwaggerDoc("v1", new OpenApiInfo()
+            {
+                Title = "Async Inn",
+                Version = "v1",
+            });
+        });
+
 
         //builder.Services.addContext
         builder.Services.AddDbContext<AsyncInnContext>(options =>
+
         options.UseSqlServer(builder.Configuration
-        .GetConnectionString("DefaultConnection")));
+        .GetConnectionString("DefaultConnection"))
+        );
 
         var app = builder.Build();
 
+        app.UseSwagger(options => {
+            options.RouteTemplate = "/api/{documentName}/swagger.json";
+        });
+        app.UseSwaggerUI(options => {
+            options.SwaggerEndpoint("/api/v1/swagger.json", "Async Inn");
+            options.RoutePrefix = "docs";
+        });
         //app.MapGet("/", () => "Hello World!");
 
 

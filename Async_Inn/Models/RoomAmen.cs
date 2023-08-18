@@ -7,13 +7,17 @@ namespace Async_Inn.Models
 	{
 		[Key]
 
-		public int Id { get; set; }
+		public int ID { get; set; }
 		[Required]
 
 		public int RoomsId { get; set; }
         [Required]
 
-        public int AmenId { get; set; }
+        public int AmenID { get; set; }
+
+        public Room? Room { get; set; }
+
+        public Amen? Amenity { get; set; }
     }
 }
 

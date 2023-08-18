@@ -55,7 +55,7 @@ namespace Async_Inn.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAmen(int id, Amen amen)
         {
-            if (id != amen.Id)
+            if (id != amen.ID)
             {
                 return BadRequest();
             }
@@ -93,7 +93,7 @@ namespace Async_Inn.Controllers
             _context.Amen.Add(amen);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAmen", new { id = amen.Id }, amen);
+            return CreatedAtAction("GetAmen", new { id = amen.ID }, amen);
         }
 
         // DELETE: api/Amen/5
@@ -118,7 +118,7 @@ namespace Async_Inn.Controllers
 
         private bool AmenExists(int id)
         {
-            return (_context.Amen?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Amen?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }
