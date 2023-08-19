@@ -1,6 +1,8 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 using Async_Inn.Data;
+using Async_Inn.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -28,6 +30,8 @@ public class Program
                 Version = "v1",
             });
         });
+        builder.Services.AddIdentityCore<ApplicationUser>()
+                .AddEntityFrameworkStores<AsyncInnContext>();
 
 
         //builder.Services.addContext

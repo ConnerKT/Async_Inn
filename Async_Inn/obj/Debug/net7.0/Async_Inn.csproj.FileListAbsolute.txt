@@ -349,3 +349,9 @@
 /Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/bin/Debug/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/bin/Debug/net7.0/Microsoft.Extensions.Identity.Core.dll
+/Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/bin/Debug/net7.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/connerthompson/Documents/Coding Central/GitHub/Async_Inn/Async_Inn/bin/Debug/net7.0/Microsoft.Extensions.Options.dll

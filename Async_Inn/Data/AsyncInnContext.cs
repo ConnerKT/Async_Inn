@@ -1,11 +1,12 @@
 using System;
 using Async_Inn.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Async_Inn.Data
 {
-	public class AsyncInnContext: DbContext
-	{
+	public class AsyncInnContext : IdentityDbContext
+    {
 		public DbSet<Amen> Amens;
 		public DbSet<RoomAmen> RoomAmens;
         public DbSet<Room> Rooms;
@@ -19,8 +20,9 @@ namespace Async_Inn.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-			//Information tables
-			modelBuilder.Entity<Room>().HasData(new Room
+            base.OnModelCreating(modelBuilder);
+            //Information tables
+            modelBuilder.Entity<Room>().HasData(new Room
 			{ ID = 1, Layout = 0, Name = "Basic Room" });
 
 			modelBuilder.Entity<Hotel>().HasData(new Hotel
@@ -34,10 +36,11 @@ namespace Async_Inn.Data
 			modelBuilder.Entity<RoomAmen>().HasData(new RoomAmen
 			{ ID = 1, AmenID = 1, RoomsId = 1 });
 			modelBuilder.Entity<HotelRoom>().HasData(new HotelRoom
-			{ ID = 1, HotelID = 1, RoomID = 1, Price = 120.99 });
+			{ ID = 1, HotelID = 1, RoomID = 1,Name = "Express Room" ,Price = 120.99 });
 
             base.OnModelCreating(modelBuilder);
         }
+
 
         public DbSet<Async_Inn.Models.Hotel> Hotel { get; set; } = default!;
 
